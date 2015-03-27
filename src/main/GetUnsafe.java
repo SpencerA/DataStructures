@@ -5,7 +5,6 @@ import java.lang.reflect.Field;
 public class GetUnsafe {
   private GetUnsafe() { }
   public static Unsafe getUnsafe() {
-    // Not on bootclasspath
     if( GetUnsafe.class.getClassLoader() == null )
       return Unsafe.getUnsafe();
     try {
