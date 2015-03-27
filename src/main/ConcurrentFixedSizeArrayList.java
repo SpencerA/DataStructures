@@ -9,7 +9,7 @@ import java.io.Serializable;
  */
 class ConcurrentFixedSizeArrayList implements Serializable {
   public void add( long l ) { _cal.add(l); }
-  public long[] safePublish() { return _cal._l; }
+  public long[] safePublish() { return _cal._l.clone(); }
   public long internal_size() { return _cal._cur; }
   private volatile CAL _cal; // the underlying concurrent array list
   ConcurrentFixedSizeArrayList(int sz) { _cal=new CAL(sz); }
